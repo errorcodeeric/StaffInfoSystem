@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>Staff Information System</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <H1>Staff Information System</H1>
+<!-- 
+    <input class="btn btn-primary new" type="button" value="New" id="newStaffButton">
+    <input class="btn btn-primary all" type="button" value="View All" id="viewAllButton">
+ -->
+
+ 
+     
+      <div class="form-group row mt-1" id="newEntry">
+        <div class="row">
+          <label for="staffID" class="col-1 col-form-label">StaffID</label> 
+           <div class="col-1" id="StaffID">0</div>
+        </div>
+        <div class="row">
+        <label for="branch" class="col-1 col-form-label">Branch</label> 
+        <div class="col-8">
+          <select id="branch" name="branch" class="custom-select" required="required">
+            <option value="Katong">Katong</option>
+            <option value="Siglap">Siglap</option>
+            <option value="Upper Changi">Upper Changi</option>
+            <option value="East Coast">East Coast</option>
+          </select>
+        </div>
+        </div>
+     
+      <div class="form-group row">
+        <label for="name" class="col-1 col-form-label">Name</label> 
+        <div class="col-8">
+          <input id="staffName" name="staffName" type="text" class="form-control" required="required">
+        </div>
+      </div> 
+      <div class="offset-1 col-3">
+          <input class="btn btn-primary all mt-1" type="button" value="Save" id="saveButton">
+        <input class="btn btn-primary all mt-1" type="button" value="Update" id="updateButton">
+        </div>
+         </div>
+    
+    <!-- View all staff -->
+     <table id="employeeInfo"></table>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
