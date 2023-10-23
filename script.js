@@ -155,3 +155,4 @@ updateButton.addEventListener("click", function() {
 
 showAllStaff();
 
+console.log(readJSON())
