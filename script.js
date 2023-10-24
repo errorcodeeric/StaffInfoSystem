@@ -1,5 +1,4 @@
 const body = document.body
-const staffRoster = []
 const rosterViewPort = body.querySelector('#employeeInfo')
 const viewAllButton = body.querySelector('#viewAllButton')
 const addButton = body.querySelector('#newStaffButton')
@@ -20,35 +19,9 @@ function getStaffID() {
   return staffId
 }
 
-let staffRecord = {
-  employeeNumber: "",
-  employeeName: "",
-  employeeBranch: "",
-}
 
-function addEmployee(i, j, k) {
-  staffRecord = {
-    employeeNumber: i,
-    employeeName: j,
-    employeeBranch: k
-  };
 
-  staffRoster.push(staffRecord);
-  // console.log(staffRecord);
-  // console.log(staffRoster);
-
-}
-
-function displayRoster() {
-  console.log(staffRoster);
-}
-
-addEmployee(1, "Keong", "Katong");
-addEmployee(2, "Leon", "Siglap");
-addEmployee(3, "Xiao Fang", "Upper Changi");
-addEmployee(4, "Brandon", "East Coast");
-
-function showAllStaff() {
+async function showAllStaff() {
   // console.log(staffRoster);
   // console.log(staffRecord);
 
@@ -153,6 +126,8 @@ updateButton.addEventListener("click", function() {
   showAllStaff();
 });
 
-showAllStaff();
 
-console.log(readJSON())
+addEmployee(0, "Default", "Default");
+
+seedDB();
+showAllStaff();
