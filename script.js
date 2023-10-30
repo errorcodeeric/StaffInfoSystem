@@ -14,6 +14,11 @@ let _staffName = ""
 let _staffNumber = ""
 
 let staffId = parseInt("4")
+
+function $(x) {
+  return document.getElementById(x);
+}
+
 function getStaffID() {
   staffId = + staffId + 1;
   return staffId
@@ -21,12 +26,12 @@ function getStaffID() {
 
 
 
-async function showAllStaff() {
+ function showAllStaff() {
   // console.log(staffRoster);
   // console.log(staffRecord);
 
   mainView.innerHTML = "" //resets the viewport
-  mainView.innerHTML += "<th class='col-2 text-center'>Action</th><th class='col-1'>StaffID</th><th class='col-2'>Branch</th><th>Name</th>" // set up table headers
+  mainView.innerHTML += "<th class='col-3 text-center'>Action</th><th class='col-2'>StaffID</th><th class='col-2'>Branch</th><th>Name</th>" // set up table headers
 
   // Iterate through staff roster and append to roster view
   for (let n of staffRoster) {
@@ -34,16 +39,19 @@ async function showAllStaff() {
 
 
     listItem.innerHTML = `
-      <td>
+      <td class="col-3">
       <button class="btn-s btn-primary all editbutton mr-1">Edit</button>
       <button class="btn-s btn-danger all delbutton">Delete</button>
       </td>
-      <td class='text-center ml-2'>${n.employeeNumber} </td>
+      <td class='text-center col-2 ml-2'>${n.employeeNumber} </td>
       <td>${n.employeeBranch} </td>
       <td>${n.employeeName} </td>
     
     `
     listItem.querySelector(".editbutton").addEventListener("click", function() {
+      
+      document.getElementById('saveButton').style.display = 'none';
+      document.getElementById('updateButton').classList.remove("d-none");
 
 
 
@@ -124,10 +132,11 @@ updateButton.addEventListener("click", function() {
   staffRoster.splice(indexToDelete, 1);
   addEmployee(parseInt(_staffNumber), _staffName, _branch);
   showAllStaff();
-});
+}); 
 
+async function main(){
+  await seedDB();
+  showAllStaff();
+}
 
-addEmployee(0, "Default", "Default");
-
-seedDB();
-showAllStaff();
+main();

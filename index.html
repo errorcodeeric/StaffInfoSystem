@@ -24,14 +24,14 @@
 
  
      
-      <div class="form-group row mt-1" id="newEntry">
+      <div class="card col-3 row mt-1 pb-2" id="newEntry">
         <div class="row">
-          <label for="staffID" class="col-1 col-form-label">StaffID</label> 
-           <div class="col-1" id="StaffID">0</div>
+          <label class="h6" for="staffID">StaffID</label> 
+           <div id="StaffID">0</div>
         </div>
         <div class="row">
-        <label for="branch" class="col-1 col-form-label">Branch</label> 
-        <div class="col-8">
+        <label class="h6 mt-2" for="branch">Branch</label> 
+        <div>
           <select id="branch" name="branch" class="custom-select" required="required">
             <option value="Katong">Katong</option>
             <option value="Siglap">Siglap</option>
@@ -41,20 +41,20 @@
         </div>
         </div>
      
-      <div class="form-group row">
-        <label for="name" class="col-1 col-form-label">Name</label> 
-        <div class="col-8">
+      <div>
+        <label class="h6 mt2" for="name">Name</label> 
+        <div>
           <input id="staffName" name="staffName" type="text" class="form-control" required="required">
         </div>
       </div> 
-      <div class="offset-1 col-3">
+      <div>
           <input class="btn btn-primary all mt-1" type="button" value="Save" id="saveButton">
-        <input class="btn btn-primary all mt-1" type="button" value="Update" id="updateButton">
+        <input class="btn btn-primary all mt-1 d-none" type="button" value="Update" id="updateButton">
         </div>
          </div>
     
     <!-- View all staff -->
-     <table id="employeeInfo"></table>
+     <table class="card" id="employeeInfo"></table>
 
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js" integrity="sha512-emSwuKiMyYedRwflbZB2ghzX8Cw8fmNVgZ6yQNNXXagFzFOaQmbvQ1vmDkddHjm5AITcBIZfC7k4ShQSjgPAmQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
