@@ -31,7 +31,7 @@ function getStaffID() {
   // console.log(staffRecord);
 
   mainView.innerHTML = "" //resets the viewport
-  mainView.innerHTML += "<th class='col-3 text-center'>Action</th><th class='col-2'>StaffID</th><th class='col-2'>Branch</th><th>Name</th>" // set up table headers
+  mainView.innerHTML += "<th class='col-2 text-center'>Action</th><th class='text-center col-1'>StaffID</th><th class='col-1'>Branch</th><th class='col-10'>Name</th>" // set up table headers
 
   // Iterate through staff roster and append to roster view
   for (let n of staffRoster) {
@@ -39,7 +39,7 @@ function getStaffID() {
 
 
     listItem.innerHTML = `
-      <td class="col-3">
+      <td class="col-2 text-center">
       <button class="btn-s btn-primary all editbutton mr-1">Edit</button>
       <button class="btn-s btn-danger all delbutton">Delete</button>
       </td>
